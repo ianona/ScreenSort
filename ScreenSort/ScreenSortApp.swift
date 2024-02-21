@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct ScreenSortApp: App {
+    @StateObject var dataModel = DataModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+               GridView()
+           }
+           .environmentObject(dataModel)
+           .navigationViewStyle(.stack)
         }
     }
 }
